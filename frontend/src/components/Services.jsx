@@ -13,6 +13,21 @@ const Services = () => {
 
   const services = [
     {
+      icon: Zap,
+      title: "Reset Detail",
+      description: "Our ultimate comprehensive detailing package that completely transforms your vehicle inside and out.",
+      features: [
+        "Complete interior blow out and vacuum",
+        "Steam extraction of upholstery and carpets",
+        "Interior deodorizing and leather conditioning",
+        "Paint clay bar treatment and machine polishing",
+        "Premium paint sealant (up to 8 months protection)",
+        "Wheels, tires, and door jambs detailed"
+      ],
+      gradient: "from-yellow-500 to-orange-500",
+      premium: true
+    },
+    {
       icon: Car,
       title: "Full Interior & Exterior Detailing",
       description: "Complete comprehensive cleaning and restoration of your vehicle inside and out.",
