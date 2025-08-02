@@ -3,6 +3,26 @@
 export const mockServices = [
   {
     id: 1,
+    title: "Reset Detail",
+    description: "Our ultimate comprehensive detailing package that completely transforms your vehicle inside and out.",
+    price: "Starting at $400",
+    duration: "6-8 hours",
+    features: [
+      "Complete interior blow out and vacuum",
+      "Steam extraction of upholstery and carpets", 
+      "Interior deodorizing and leather conditioning",
+      "All interior plastic surfaces cleaned and protected",
+      "All glass cleaned inside and out",
+      "Rubber weather mats power washed and scrubbed",
+      "Vehicle thoroughly power washed with foam cannon",
+      "Paint clay barred to remove surface contamination",
+      "Careful machine polishing with premium paint sealant",
+      "Up to 8 months of paint protection",
+      "Wheels, tires, door and trunk jambs detailed"
+    ]
+  },
+  {
+    id: 2,
     title: "Full Interior & Exterior Detailing",
     description: "Complete comprehensive cleaning and restoration of your vehicle inside and out.",
     price: "Starting at $150",
@@ -16,7 +36,7 @@ export const mockServices = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Paint Correction", 
     description: "Professional paint restoration to remove swirl marks, scratches, and imperfections.",
     price: "Starting at $300",
@@ -30,7 +50,7 @@ export const mockServices = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     title: "Paint Enhancement",
     description: "Enhance your vehicle's paint finish with professional-grade treatments.",
     price: "Starting at $200",
@@ -44,7 +64,7 @@ export const mockServices = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     title: "Headlight Restoration",
     description: "Restore clarity and brightness to foggy, yellowed, or oxidized headlights.",
     price: "Starting at $80",
