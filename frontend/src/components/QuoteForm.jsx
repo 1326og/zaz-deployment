@@ -65,32 +65,32 @@ const QuoteForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Mock submission - will be replaced with actual backend call
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Submit to actual backend API
+      const response = await axios.post(`${API}/quotes`, formData);
       
-      console.log('Quote request submitted:', formData);
-      
-      toast({
-        title: "Quote Request Sent!",
-        description: "We'll contact you within 24 hours with a detailed quote.",
-      });
+      if (response.data.success) {
+        toast({
+          title: "Quote Request Sent!",
+          description: "We'll contact you within 24 hours with a detailed quote.",
+        });
 
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        vehicleType: '',
-        services: [],
-        location: '',
-        message: ''
-      });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          vehicleType: '',
+          services: [],
+          location: '',
+          message: ''
+        });
+      }
     } catch (error) {
+      console.error('Error submitting quote request:', error);
       toast({
         title: "Error",
-        description: "There was an issue sending your request. Please try again.",
+        description: error.response?.data?.detail || "There was an issue sending your request. Please try again.",
         variant: "destructive"
       });
     } finally {
