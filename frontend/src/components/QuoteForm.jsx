@@ -22,6 +22,7 @@ const QuoteForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const services = [
+    'Reset Detail (Premium Package)',
     'Full Interior & Exterior Detailing',
     'Paint Correction',
     'Paint Enhancement', 
