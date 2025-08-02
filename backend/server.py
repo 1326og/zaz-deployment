@@ -1,12 +1,12 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field
-from typing import List
+from pydantic import BaseModel, Field, EmailStr
+from typing import List, Optional
 import uuid
 from datetime import datetime
 
@@ -35,6 +35,36 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+class QuoteRequest(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    name: str
+    email: EmailStr
+    phone: str
+    vehicleType: str
+    services: List[str]
+    location: Optional[str] = ""
+    message: Optional[str] = ""
+    status: str = "pending"
+    createdAt: datetime = Field(default_factory=datetime.utcnow)
+    updatedAt: datetime = Field(default_factory=datetime.utcnow)
+
+class QuoteRequestCreate(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    vehicleType: str
+    services: List[str]
+    location: Optional[str] = ""
+    message: Optional[str] = ""
+
+class Service(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    title: str
+    description: str
+    features: List[str]
+    active: bool = True
+    createdAt: datetime = Field(default_factory=datetime.utcnow)
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
@@ -51,6 +81,56 @@ async def create_status_check(input: StatusCheckCreate):
 async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
+
+# Quote Request Endpoints
+@api_router.post("/quotes", response_model=dict)
+async def create_quote_request(quote_data: QuoteRequestCreate):
+    try:
+        # Create quote request object
+        quote_dict = quote_data.dict()
+        quote_obj = QuoteRequest(**quote_dict)
+        
+        # Insert into database
+        await db.quote_requests.insert_one(quote_obj.dict())
+        
+        return {
+            "success": True,
+            "message": "Quote request submitted successfully! We'll contact you within 24 hours.",
+            "quoteId": quote_obj.id
+        }
+    except Exception as e:
+        logging.error(f"Error creating quote request: {e}")
+        raise HTTPException(status_code=500, detail="Failed to submit quote request")
+
+@api_router.get("/quotes", response_model=List[QuoteRequest])
+async def get_quote_requests():
+    try:
+        quote_requests = await db.quote_requests.find().to_list(1000)
+        return [QuoteRequest(**quote) for quote in quote_requests]
+    except Exception as e:
+        logging.error(f"Error fetching quote requests: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch quote requests")
+
+@api_router.get("/quotes/{quote_id}", response_model=QuoteRequest)
+async def get_quote_request(quote_id: str):
+    try:
+        quote = await db.quote_requests.find_one({"id": quote_id})
+        if not quote:
+            raise HTTPException(status_code=404, detail="Quote request not found")
+        return QuoteRequest(**quote)
+    except Exception as e:
+        logging.error(f"Error fetching quote request: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch quote request")
+
+# Services Endpoints
+@api_router.get("/services", response_model=List[Service])
+async def get_services():
+    try:
+        services = await db.services.find({"active": True}).to_list(100)
+        return [Service(**service) for service in services]
+    except Exception as e:
+        logging.error(f"Error fetching services: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch services")
 
 # Include the router in the main app
 app.include_router(api_router)
