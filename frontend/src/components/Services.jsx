@@ -97,12 +97,17 @@ const Services = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card key={index} className="group hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] border-0 bg-white/80 backdrop-blur-sm overflow-hidden">
+              <Card key={index} className={`group hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] border-0 bg-white/80 backdrop-blur-sm overflow-hidden ${service.premium ? 'ring-2 ring-yellow-400 ring-opacity-50' : ''}`}>
+                {service.premium && (
+                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-center py-2 text-sm font-bold">
+                    ⭐ PREMIUM PACKAGE ⭐
+                  </div>
+                )}
                 <CardHeader className="pb-4">
                   <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-2xl font-bold text-slate-800 group-hover:text-orange-600 transition-colors duration-300">
+                  <CardTitle className={`text-2xl font-bold group-hover:text-orange-600 transition-colors duration-300 ${service.premium ? 'text-orange-600' : 'text-slate-800'}`}>
                     {service.title}
                   </CardTitle>
                   <p className="text-slate-600 text-lg leading-relaxed">
