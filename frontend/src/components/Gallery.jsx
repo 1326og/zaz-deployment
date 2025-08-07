@@ -10,27 +10,32 @@ const Gallery = () => {
     {
       src: "https://customer-assets.emergentagent.com/job_car-spa-pro-1/artifacts/ye68oxte_dtp5.jpg",
       title: "Blue Mustang - Before & After",
-      description: "Complete paint correction and enhancement on this beautiful blue Mustang"
+      description: "Complete paint correction and enhancement on this beautiful blue Mustang",
+      alt: "Blue Ford Mustang after professional paint correction and detailing by Zaz Precision Auto Detailing"
     },
     {
       src: "https://customer-assets.emergentagent.com/job_car-spa-pro-1/artifacts/9yb5mp0v_dtp6.jpg", 
       title: "Luxury SUV - Paint Perfection",
-      description: "Full exterior detailing with paint correction on this premium SUV"
+      description: "Full exterior detailing with paint correction on this premium SUV",
+      alt: "Black luxury SUV after comprehensive exterior detailing and paint correction service"
     },
     {
       src: "https://customer-assets.emergentagent.com/job_car-spa-pro-1/artifacts/9bo97esu_dtp8.jpg",
       title: "Interior Deep Clean",
-      description: "Professional interior detailing showcasing our attention to detail"
+      description: "Professional interior detailing showcasing our attention to detail",
+      alt: "Luxury vehicle interior showing professional deep cleaning and leather conditioning results"
     },
     {
       src: "https://customer-assets.emergentagent.com/job_car-spa-pro-1/artifacts/wha5fb9c_dtp2.jpg",
       title: "Convertible Restoration", 
-      description: "Complete paint enhancement and detailing on this stylish convertible"
+      description: "Complete paint enhancement and detailing on this stylish convertible",
+      alt: "Silver convertible car after Reset Detail premium package treatment"
     },
     {
       src: "https://customer-assets.emergentagent.com/job_car-spa-pro-1/artifacts/o1zmh9gc_dt4.jpg",
       title: "SUV Paint Correction",
-      description: "Professional paint correction and protection applied to this SUV"
+      description: "Professional paint correction and protection applied to this SUV",
+      alt: "Dark SUV showcasing professional paint correction and enhancement results"
     }
   ];
 
