@@ -122,6 +122,26 @@ async def get_quote_request(quote_id: str):
         logging.error(f"Error fetching quote request: {e}")
         raise HTTPException(status_code=500, detail="Failed to fetch quote request")
 
+@api_router.patch("/quotes/{quote_id}", response_model=dict)
+async def update_quote_status(quote_id: str, status_update: dict):
+    try:
+        # Update quote status in database
+        result = await db.quote_requests.update_one(
+            {"id": quote_id},
+            {"$set": {"status": status_update.get("status"), "updatedAt": datetime.utcnow()}}
+        )
+        
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Quote request not found")
+        
+        return {
+            "success": True,
+            "message": f"Quote status updated to {status_update.get('status')}"
+        }
+    except Exception as e:
+        logging.error(f"Error updating quote status: {e}")
+        raise HTTPException(status_code=500, detail="Failed to update quote status")
+
 # Services Endpoints
 @api_router.get("/services", response_model=List[Service])
 async def get_services():
