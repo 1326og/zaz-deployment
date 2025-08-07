@@ -24,7 +24,7 @@ const Hero = () => {
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                PRECISION
+                ZAZ PRECISION
               </span>
               <br />
               <span className="text-white">AUTO DETAILING</span>
