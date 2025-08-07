@@ -134,7 +134,7 @@ const Gallery = () => {
               {/* Image */}
               <img
                 src={selectedImage.src}
-                alt={selectedImage.title}
+                alt={selectedImage.alt}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
 
