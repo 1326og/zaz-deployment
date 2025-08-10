@@ -47,7 +47,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
                 <Sparkles className="h-5 w-5 text-orange-400" />
-                <span className="text-white font-medium">Interior Deep Clean</span>
+                <span className="text-white font-medium">Steam Extraction</span>
               </div>
             </div>
 
