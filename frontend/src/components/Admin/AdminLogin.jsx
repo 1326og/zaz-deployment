@@ -37,18 +37,8 @@ const AdminLogin = ({ onLogin }) => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-4">
       <Card className="w-full max-w-md bg-white/10 backdrop-blur-md border-white/20">
         <CardHeader className="text-center">
-          <div className="relative mx-auto w-fit mb-4">
-            {/* Shield-style logo for admin */}
-            <div className="bg-gradient-to-b from-orange-500 to-orange-600 px-6 py-3 rounded-lg shadow-xl border-2 border-orange-400/50">
-              <div className="text-white font-black text-2xl tracking-wider">
-                ZAZ
-              </div>
-            </div>
-            {/* Bottom section */}
-            <div className="bg-slate-800 text-white px-4 py-1 rounded-b-lg -mt-1">
-              <div className="text-xs font-bold tracking-wide text-center">PRECISION</div>
-              <div className="text-xs font-medium tracking-wider text-center -mt-0.5">AUTO DETAILING</div>
-            </div>
+          <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-lg font-bold text-xl tracking-wider mx-auto w-fit mb-4">
+            ZAZ
           </div>
           <CardTitle className="text-2xl font-bold text-white">Admin Dashboard</CardTitle>
           <p className="text-slate-300">Access your quote management system</p>
