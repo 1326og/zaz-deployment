@@ -69,7 +69,7 @@ const Services = () => {
     {
       icon: Eye,
       title: "Headlight Ceramic Coating",
-      description: "Restore clarity and brightness to foggy, yellowed, or oxidized headlights.",
+      description: "Apply advanced ceramic coating to headlights for long-lasting clarity and protection.",
       features: [
         "UV damage restoration",
         "Oxidation removal",
