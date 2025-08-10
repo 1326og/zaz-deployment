@@ -19,12 +19,24 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-lg font-bold text-xl tracking-wider transform hover:scale-105 transition-all duration-300 cursor-pointer">
-              ZAZ
-            </div>
-            <div className="hidden md:flex flex-col">
-              <span className="text-slate-800 font-bold text-lg leading-tight">PRECISION</span>
-              <span className="text-orange-500 font-semibold text-sm tracking-wide">AUTO DETAILING</span>
+            <div className="relative">
+              {/* Shield-style logo container */}
+              <div className="bg-gradient-to-b from-orange-500 to-orange-600 px-6 py-3 rounded-lg shadow-lg border-2 border-white relative overflow-hidden" style={{clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)'}}>
+                <div className="text-white font-black text-2xl tracking-wider relative z-10">
+                  ZAZ
+                </div>
+                {/* Inner shadow effect */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
+              </div>
+              {/* Bottom section */}
+              <div className="bg-slate-800 text-white px-4 py-1 rounded-b-lg -mt-1 relative z-0">
+                <div className="text-xs font-bold tracking-wide text-center">
+                  PRECISION
+                </div>
+                <div className="text-xs font-medium tracking-wider text-center -mt-0.5">
+                  AUTO DETAILING
+                </div>
+              </div>
             </div>
           </div>
 
