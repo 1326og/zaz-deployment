@@ -20,13 +20,20 @@ const Footer = () => {
             <div className="lg:col-span-2">
               {/* Logo */}
               <div className="flex items-center space-x-3 mb-6">
-                <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-lg font-bold text-xl tracking-wider">
-                  ZAZ
+                <div className="relative">
+                  {/* Shield-style logo for footer */}
+                  <div className="bg-gradient-to-b from-orange-500 to-orange-600 px-5 py-2 rounded-lg shadow-lg border-2 border-orange-400/50">
+                    <div className="text-white font-black text-xl tracking-wider">
+                      ZAZ
+                    </div>
+                  </div>
+                  {/* Bottom section */}
+                  <div className="bg-slate-700 text-white px-3 py-1 rounded-b-lg -mt-1">
+                    <div className="text-xs font-bold tracking-wide text-center">PRECISION</div>
+                    <div className="text-xs font-medium tracking-wider text-center -mt-0.5">AUTO DETAILING</div>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-white font-bold text-lg leading-tight">PRECISION</span>
-                  <span className="text-orange-400 font-semibold text-sm tracking-wide">AUTO DETAILING LLC</span>
-                </div>
+                <div className="text-orange-400 text-sm font-semibold">LLC</div>
               </div>
 
               <p className="text-slate-300 text-lg leading-relaxed mb-6 max-w-md">
