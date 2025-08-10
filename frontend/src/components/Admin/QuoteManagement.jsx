@@ -165,8 +165,16 @@ const QuoteManagement = ({ onLogout }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-3 py-1 rounded font-bold text-lg">
-                ZAZ
+              <div className="relative">
+                {/* Admin dashboard shield logo */}
+                <div className="bg-gradient-to-b from-orange-500 to-orange-600 px-4 py-2 rounded-lg shadow-lg border border-orange-400/50">
+                  <div className="text-white font-black text-lg tracking-wider">
+                    ZAZ
+                  </div>
+                </div>
+                <div className="bg-slate-700 text-white px-2 py-0.5 rounded-b-lg -mt-1">
+                  <div className="text-xs font-bold tracking-wide text-center">PRECISION</div>
+                </div>
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-slate-800">Admin Dashboard</h1>
