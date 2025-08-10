@@ -35,7 +35,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>Zaz Precision Auto Detailing LLC | Mobile Car Detailing Services NJ</title>
-        <meta name="description" content="Professional mobile auto detailing services in New Jersey. Reset Detail premium package, paint correction, interior & exterior detailing. We come to you! Call (973) 534-0023 for free quote." />
+        <meta name="description" content="Professional mobile auto detailing services in Bolivia NC and surrounding areas. Reset Detail premium package, paint correction, interior & exterior detailing. We come to you! Call (973) 534-0023 for free quote." />
         <meta name="keywords" content="mobile car detailing NJ, auto detailing New Jersey, paint correction, Reset Detail package, interior detailing, exterior detailing, headlight restoration, mobile detailing near me" />
         <link rel="canonical" href="https://zazprecisionautodetailing.com" />
         
