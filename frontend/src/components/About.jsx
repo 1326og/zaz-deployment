@@ -126,7 +126,7 @@ const About = () => {
                 <div className="bg-gradient-to-r from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Zap className="h-8 w-8 text-white" />
                 </div>
-                <h4 className="font-semibold text-slate-800">Headlight Restoration</h4>
+                <h4 className="font-semibold text-slate-800">Headlight Ceramic Coating</h4>
               </div>
             </div>
           </div>
