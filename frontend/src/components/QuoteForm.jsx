@@ -306,11 +306,7 @@ const QuoteForm = () => {
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                      <p className="text-slate-300">Professional mobile service - we come to you</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                      <p className="text-slate-300">Only need water spigot and electricity access</p>
+                      <p className="text-slate-300">30+ years of experience in professional auto detailing</p>
                     </div>
                     <div className="flex items-start space-x-3">
                       <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
