@@ -140,7 +140,7 @@ const Footer = () => {
                   Paint Enhancement
                 </span>
                 <span className="bg-slate-800 text-slate-300 px-4 py-2 rounded-full text-sm">
-                  Headlight Restoration
+                  Headlight Ceramic Coating
                 </span>
               </div>
             </div>
