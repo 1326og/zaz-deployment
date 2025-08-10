@@ -68,7 +68,7 @@ const Services = () => {
     },
     {
       icon: Eye,
-      title: "Headlight Restoration",
+      title: "Headlight Ceramic Coating",
       description: "Restore clarity and brightness to foggy, yellowed, or oxidized headlights.",
       features: [
         "UV damage restoration",
