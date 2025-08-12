@@ -2,8 +2,4 @@
 builder = "NIXPACKS"
 
 [deploy]
-startCommand = "cd backend && uvicorn server:app --host 0.0.0.0 --port $PORT"
-
-[[services]]
-[services.backend]
-source = "./backend"
+startCommand = "python main.py"
