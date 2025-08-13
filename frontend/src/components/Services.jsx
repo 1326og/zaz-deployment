@@ -89,7 +89,7 @@ const Services = () => {
             Our Premium <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Professional mobile auto detailing services delivered with precision and care. We bring showroom-quality results directly to your location.
+            Professional mobile auto detailing services delivered with precision and care. I bring showroom-quality results directly to your location.
           </p>
         </div>
 
