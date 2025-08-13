@@ -118,7 +118,7 @@ const Footer = () => {
                   <MapPin className="h-5 w-5 text-orange-400 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-white font-semibold">Mobile Service</p>
-                    <p className="text-slate-300 text-sm">We come to your location</p>
+                    <p className="text-slate-300 text-sm">I come to your location</p>
                   </div>
                 </div>
               </div>
