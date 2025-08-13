@@ -136,7 +136,7 @@ const Services = () => {
             <h3 className="text-3xl font-bold">100% Mobile Service</h3>
           </div>
           <p className="text-xl mb-6 opacity-95">
-            We come to your location! All we need is access to a water spigot and electricity, and we'll handle the rest.
+            I come to your location! All I need is access to a water spigot and electricity, and I'll handle the rest.
           </p>
           <Button 
             onClick={() => scrollToSection('quote')}
