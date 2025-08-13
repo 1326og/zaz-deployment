@@ -30,7 +30,7 @@ const Footer = () => {
               </div>
 
               <p className="text-slate-300 text-lg leading-relaxed mb-6 max-w-md">
-                Professional mobile auto detailing services that bring showroom-quality results directly to your location. We specialize in comprehensive detailing, paint correction, and enhancement services.
+                Professional mobile auto detailing services that bring showroom-quality results directly to your location. I specialize in comprehensive detailing, paint correction, and enhancement services.
               </p>
 
               {/* Mobile Service Highlight */}
