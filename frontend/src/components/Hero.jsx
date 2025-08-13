@@ -76,7 +76,7 @@ const Hero = () => {
                 <Car className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Mobile Convenience</h3>
-              <p className="text-slate-300">We come to you! Only need access to water and electricity at your location.</p>
+              <p className="text-slate-300">I come to you! Only need access to water and electricity at your location.</p>
             </div>
 
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 transform hover:scale-105 transition-all duration-300">
