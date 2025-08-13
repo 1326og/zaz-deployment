@@ -49,13 +49,13 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-slate-700 text-lg leading-relaxed">
                 <p>
-                  At Zaz Precision Auto Detailing LLC, we specialize in bringing professional-grade auto detailing services directly to your doorstep. Our mobile approach means you never have to leave the comfort of your home or office.
+                  At Zaz Precision Auto Detailing LLC, I specialize in bringing professional-grade auto detailing services directly to your doorstep. My mobile approach means you never have to leave the comfort of your home or office.
                 </p>
                 <p>
-                  We pride ourselves on delivering comprehensive interior and exterior detailing, expert paint correction, paint enhancement, and headlight restoration services that exceed expectations.
+                  I pride myself on delivering comprehensive interior and exterior detailing, expert paint correction, paint enhancement, and headlight ceramic coating services that exceed expectations.
                 </p>
                 <p>
-                  <strong className="text-orange-600">All we need is access to water and electricity</strong> - we handle everything else! Our professional equipment and premium products ensure your vehicle receives the care it deserves.
+                  <strong className="text-orange-600">All I need is access to water and electricity</strong> - I handle everything else! My professional equipment and premium products ensure your vehicle receives the care it deserves.
                 </p>
               </div>
 
