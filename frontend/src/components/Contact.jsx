@@ -25,7 +25,7 @@ const Contact = () => {
       icon: MapPin,
       title: "Service Area",
       primary: "Mobile Service",
-      secondary: "We come to your location",
+      secondary: "I come to your location",
       gradient: "from-green-500 to-teal-500"
     },
     {
