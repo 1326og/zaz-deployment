@@ -40,7 +40,7 @@ const Footer = () => {
                   <span className="text-white font-semibold">100% Mobile Service</span>
                 </div>
                 <p className="text-slate-300 text-sm">
-                  We come to you! Only need water spigot and electrical access.
+                  I come to you! Only need water spigot and electrical access.
                 </p>
               </div>
             </div>
