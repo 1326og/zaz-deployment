@@ -66,7 +66,7 @@ const About = () => {
                   <h4 className="text-xl font-bold">Simple Requirements</h4>
                 </div>
                 <p className="text-lg opacity-95">
-                  Just provide access to a water spigot and electrical outlet - we bring all the professional equipment and supplies needed for a complete detailing service.
+                  Just provide access to a water spigot and electrical outlet - I bring all the professional equipment and supplies needed for a complete detailing service.
                 </p>
               </div>
             </div>
