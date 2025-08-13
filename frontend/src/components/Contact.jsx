@@ -97,10 +97,10 @@ const Contact = () => {
                 </h3>
                 <div className="space-y-4 text-slate-700 text-lg leading-relaxed mb-8">
                   <p>
-                    Experience the convenience of professional mobile auto detailing. Our team brings all the equipment and expertise needed to make your vehicle look its absolute best.
+                    Experience the convenience of professional mobile auto detailing. I bring all the equipment and expertise needed to make your vehicle look its absolute best.
                   </p>
                   <p className="font-semibold text-orange-600">
-                    Simple Requirements: Just water spigot access and electrical outlet - we handle everything else!
+                    Simple Requirements: Just water spigot access and electrical outlet - I handle everything else!
                   </p>
                 </div>
 
