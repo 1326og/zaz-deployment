@@ -32,11 +32,9 @@ const Services = () => {
       title: "Full Interior & Exterior Detailing",
       description: "Complete comprehensive cleaning and restoration of your vehicle inside and out.",
       features: [
-        "Deep interior cleaning and conditioning",
+        "Deep interior cleaning/condition utilizing steam extraction",
         "Exterior wash and paint sealing application", 
-        "Leather and fabric protection",
-        "Dashboard and trim restoration",
-        "Window and mirror cleaning"
+        "Leather and fabric protection"
       ],
       gradient: "from-blue-500 to-cyan-500"
     },
