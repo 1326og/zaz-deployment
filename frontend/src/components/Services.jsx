@@ -67,8 +67,8 @@ const Services = () => {
     },
     {
       icon: Eye,
-      title: "Headlight Ceramic Coating",
-      description: "Apply advanced ceramic coating to headlights for long-lasting clarity and protection.",
+      title: "Headlight Restoration",
+      description: "Headlight Restoration for improved visibility and appearance.",
       features: [
         "UV damage restoration",
         "Oxidation removal",
