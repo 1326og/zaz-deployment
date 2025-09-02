@@ -30,7 +30,7 @@ const QuoteForm = () => {
     'Full Interior & Exterior Detailing',
     'Paint Correction',
     'Paint Enhancement', 
-    'Headlight Ceramic Coating',
+    'Headlight Restoration',
     'Interior Deep Clean Only',
     'Exterior Wash & Wax Only'
   ];
