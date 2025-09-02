@@ -43,13 +43,13 @@ const Services = () => {
     {
       icon: Shield,
       title: "Paint Correction", 
-      description: "Professional paint restoration to remove swirl marks, scratches, and imperfections.",
+      description: "Professional paint correction to remove swirl marks, scratches, and imperfections.",
       features: [
         "Multi-stage paint correction process",
         "Swirl mark and scratch removal",
-        "Paint depth restoration",
+        "Paint Depth Improvement",
         "High-quality finishing compounds",
-        "Machine polishing techniques"
+        "Machine polishing process"
       ],
       gradient: "from-orange-500 to-red-500"
     },
