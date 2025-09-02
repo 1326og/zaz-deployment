@@ -43,6 +43,31 @@ const Footer = () => {
                   I come to you! Only need water spigot and electrical access.
                 </p>
               </div>
+
+              {/* Social Media Links */}
+              <div className="mt-6">
+                <h4 className="text-white font-semibold text-lg mb-3">Follow ZAZ Precision</h4>
+                <div className="flex space-x-4">
+                  <a 
+                    href="http://www.youtube.com/@ZAZPRECISIONAUTODETAILING"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg transition-colors duration-200 transform hover:scale-105"
+                    aria-label="Visit our YouTube channel"
+                  >
+                    <Youtube className="h-5 w-5" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/zaz_precision_auto_detailing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white p-3 rounded-lg transition-all duration-200 transform hover:scale-105"
+                    aria-label="Follow us on Instagram"
+                  >
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Quick Links */}
