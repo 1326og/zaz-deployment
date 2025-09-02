@@ -59,10 +59,9 @@ const Services = () => {
       description: "Enhance your vehicle's paint finish with professional-grade treatments.",
       features: [
         "Paint clarity improvement",
-        "Gloss enhancement treatments",
         "Surface preparation and cleaning",
         "Professional grade products",
-        "Long-lasting shine protection"
+        "Long-lasting gloss"
       ],
       gradient: "from-green-500 to-teal-500"
     },
