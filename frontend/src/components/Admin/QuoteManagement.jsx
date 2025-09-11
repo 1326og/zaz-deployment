@@ -38,7 +38,13 @@ const QuoteManagement = ({ onLogout }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [selectedQuote, setSelectedQuote] = useState(null);
+  const [showContentEditor, setShowContentEditor] = useState(false);
   const { toast } = useToast();
+
+  // Show content editor
+  if (showContentEditor) {
+    return <ContentEditor onBack={() => setShowContentEditor(false)} />;
+  }
 
   useEffect(() => {
     fetchQuotes();
