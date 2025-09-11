@@ -98,7 +98,35 @@ async def get_status_checks():
     status_checks = await db.status_checks.find().to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
 
-# Quote Request Endpoints
+# Content Management Models
+class ContentSection(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    section: str  # 'hero', 'about', 'services', etc.
+    field: str    # 'title', 'description', etc.
+    content: str
+    updatedAt: datetime = Field(default_factory=datetime.utcnow)
+
+class ContentUpdate(BaseModel):
+    section: str
+    field: str
+    content: str
+
+class ServiceManagement(BaseModel):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    title: str
+    description: str
+    features: List[str]
+    active: bool = True
+    order: int = 0
+    createdAt: datetime = Field(default_factory=datetime.utcnow)
+    updatedAt: datetime = Field(default_factory=datetime.utcnow)
+
+class ServiceUpdate(BaseModel):
+    title: str
+    description: str
+    features: List[str]
+    active: bool = True
+    order: int = 0
 @api_router.post("/quotes", response_model=dict)
 async def create_quote_request(quote_data: QuoteRequestCreate):
     try:
