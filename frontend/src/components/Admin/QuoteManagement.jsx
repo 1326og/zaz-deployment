@@ -204,14 +204,23 @@ const QuoteManagement = ({ onLogout }) => {
                 <p className="text-slate-600">Quote Management System</p>
               </div>
             </div>
-            <Button 
-              onClick={handleLogout}
-              variant="outline"
-              className="flex items-center space-x-2"
-            >
-              <LogOut className="h-4 w-4" />
-              <span>Logout</span>
-            </Button>
+            <div className="flex items-center space-x-3">
+              <Button 
+                onClick={() => setShowContentEditor(true)}
+                className="bg-orange-600 hover:bg-orange-700 text-white flex items-center space-x-2"
+              >
+                <Edit3 className="h-4 w-4" />
+                <span>Edit Content</span>
+              </Button>
+              <Button 
+                onClick={handleLogout}
+                variant="outline"
+                className="flex items-center space-x-2"
+              >
+                <LogOut className="h-4 w-4" />
+                <span>Logout</span>
+              </Button>
+            </div>
           </div>
         </div>
       </header>
