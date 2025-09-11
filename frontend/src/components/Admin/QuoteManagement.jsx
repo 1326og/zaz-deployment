@@ -400,6 +400,7 @@ const QuoteManagement = ({ onLogout }) => {
                                 variant="outline" 
                                 size="sm"
                                 onClick={() => setSelectedQuote(quote)}
+                                title="View Details"
                               >
                                 <Eye className="h-3 w-3" />
                               </Button>
@@ -480,10 +481,21 @@ const QuoteManagement = ({ onLogout }) => {
                               size="sm"
                               onClick={() => updateQuoteStatus(quote.id, 'contacted')}
                               className="text-blue-600 hover:text-blue-700"
+                              title="Mark as Contacted"
                             >
                               <Phone className="h-3 w-3" />
                             </Button>
                           )}
+
+                          <Button 
+                            variant="outline" 
+                            size="sm"
+                            onClick={() => deleteQuote(quote.id)}
+                            className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                            title="Delete Quote"
+                          >
+                            <Trash2 className="h-3 w-3" />
+                          </Button>
                         </div>
                       </td>
                     </tr>
