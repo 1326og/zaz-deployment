@@ -21,7 +21,7 @@ ALLOWED_ORIGINS = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "").spli
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET, same_site="lax", https_only=True)
 app.add_middleware(
-    CORSMiddleware,
+
     allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["GET","POST","OPTIONS"],
@@ -39,10 +39,11 @@ client = AsyncIOMotorClient(
 )
 db = client[DB_NAME]
 quotes_col = db[COLLECTION_NAME]
-
 PUBLIC_DIR = Path(__file__).parent / "frontend" / "public"
 if PUBLIC_DIR.exists():
-    app.mount("/assets", StaticFiles(directory=PUBLIC_DIR / "assets"), name="assets")
+    assets_dir = PUBLIC_DIR / "assets"
+    if assets_dir.exists():
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")    
 
 class QuoteIn(BaseModel):
     name: str = Field(min_length=1, max_length=100)
