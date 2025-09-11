@@ -186,6 +186,116 @@ async def update_quote_status(quote_id: str, status_update: dict):
         logging.error(f"Error updating quote status: {e}")
         raise HTTPException(status_code=500, detail="Failed to update quote status")
 
+@api_router.delete("/quotes/{quote_id}", response_model=dict)
+async def delete_quote_request(quote_id: str):
+    try:
+        result = await db.quote_requests.delete_one({"id": quote_id})
+        
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Quote request not found")
+        
+        return {
+            "success": True,
+            "message": "Quote request deleted successfully"
+        }
+    except Exception as e:
+        logging.error(f"Error deleting quote request: {e}")
+        raise HTTPException(status_code=500, detail="Failed to delete quote request")
+
+# Content Management Endpoints
+@api_router.get("/content", response_model=List[ContentSection])
+async def get_content():
+    try:
+        content = await db.content_sections.find().to_list(100)
+        return [ContentSection(**item) for item in content]
+    except Exception as e:
+        logging.error(f"Error fetching content: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch content")
+
+@api_router.put("/content", response_model=dict)
+async def update_content(content_update: ContentUpdate):
+    try:
+        # Update or insert content
+        result = await db.content_sections.update_one(
+            {"section": content_update.section, "field": content_update.field},
+            {"$set": {
+                "content": content_update.content,
+                "updatedAt": datetime.utcnow()
+            }},
+            upsert=True
+        )
+        
+        return {
+            "success": True,
+            "message": "Content updated successfully"
+        }
+    except Exception as e:
+        logging.error(f"Error updating content: {e}")
+        raise HTTPException(status_code=500, detail="Failed to update content")
+
+# Service Management Endpoints  
+@api_router.get("/admin/services", response_model=List[ServiceManagement])
+async def get_services_admin():
+    try:
+        services = await db.services_management.find().sort("order", 1).to_list(100)
+        return [ServiceManagement(**service) for service in services]
+    except Exception as e:
+        logging.error(f"Error fetching services: {e}")
+        raise HTTPException(status_code=500, detail="Failed to fetch services")
+
+@api_router.post("/admin/services", response_model=dict)
+async def create_service(service_data: ServiceUpdate):
+    try:
+        service_obj = ServiceManagement(**service_data.dict())
+        await db.services_management.insert_one(service_obj.dict())
+        
+        return {
+            "success": True,
+            "message": "Service created successfully",
+            "serviceId": service_obj.id
+        }
+    except Exception as e:
+        logging.error(f"Error creating service: {e}")
+        raise HTTPException(status_code=500, detail="Failed to create service")
+
+@api_router.put("/admin/services/{service_id}", response_model=dict)  
+async def update_service(service_id: str, service_data: ServiceUpdate):
+    try:
+        result = await db.services_management.update_one(
+            {"id": service_id},
+            {"$set": {
+                **service_data.dict(),
+                "updatedAt": datetime.utcnow()
+            }}
+        )
+        
+        if result.matched_count == 0:
+            raise HTTPException(status_code=404, detail="Service not found")
+        
+        return {
+            "success": True, 
+            "message": "Service updated successfully"
+        }
+    except Exception as e:
+        logging.error(f"Error updating service: {e}")
+        raise HTTPException(status_code=500, detail="Failed to update service")
+
+@api_router.delete("/admin/services/{service_id}", response_model=dict)
+async def delete_service(service_id: str):
+    try:
+        result = await db.services_management.delete_one({"id": service_id})
+        
+        if result.deleted_count == 0:
+            raise HTTPException(status_code=404, detail="Service not found")
+        
+        return {
+            "success": True,
+            "message": "Service deleted successfully"
+        }
+    except Exception as e:
+        logging.error(f"Error deleting service: {e}")
+        raise HTTPException(status_code=500, detail="Failed to delete service")
+
 # Services Endpoints
 @api_router.get("/services", response_model=List[Service])
 async def get_services():
