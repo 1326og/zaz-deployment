@@ -14,7 +14,9 @@ import {
   XCircle,
   LogOut,
   Trash2,
-  MessageSquare
+  MessageSquare,
+  Settings,
+  Edit3
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Button } from '../ui/button';
@@ -23,6 +25,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
 import { Badge } from '../ui/badge';
 import { useToast } from '../../hooks/use-toast';
+import ContentEditor from './ContentEditor';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
