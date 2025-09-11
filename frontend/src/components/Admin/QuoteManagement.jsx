@@ -171,6 +171,8 @@ const QuoteManagement = ({ onLogout }) => {
       });
     }
   };
+
+  const handleLogout = () => {
     localStorage.removeItem('admin_logged_in');
     onLogout(false);
     toast({
