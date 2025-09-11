@@ -150,7 +150,27 @@ const QuoteManagement = ({ onLogout }) => {
     window.URL.revokeObjectURL(url);
   };
 
-  const handleLogout = () => {
+  const deleteQuote = async (quoteId) => {
+    if (!window.confirm('Are you sure you want to delete this quote? This action cannot be undone.')) {
+      return;
+    }
+    
+    try {
+      await axios.delete(`${API}/quotes/${quoteId}`);
+      setQuotes(quotes.filter(quote => quote.id !== quoteId));
+      toast({
+        title: "Quote Deleted",
+        description: "Quote request has been permanently deleted",
+      });
+    } catch (error) {
+      console.error('Error deleting quote:', error);
+      toast({
+        title: "Error",
+        description: "Failed to delete quote",
+        variant: "destructive"
+      });
+    }
+  };
     localStorage.removeItem('admin_logged_in');
     onLogout(false);
     toast({
