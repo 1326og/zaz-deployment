@@ -20,7 +20,7 @@ ALLOWED_ORIGINS = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "").spli
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET, same_site="lax", https_only=True)
-app.add_middleware(
+app.add_middleware(CORSMiddleware, 
 
     allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
