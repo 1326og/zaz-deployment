@@ -50,8 +50,8 @@ if not MONGODB_URI:
 
 client = AsyncIOMotorClient(
     MONGODB_URI,
-    tls=True,
-    tlsAllowInvalidCertificates=False,
+        tls=True,
+        tlsAllowInvalidCertificates=True,
     serverSelectionTimeoutMS=10000,
     connectTimeoutMS=10000,
     maxPoolSize=50,
