@@ -47,10 +47,8 @@ DB_NAME = os.environ.get("DB_NAME", "zaz_detailing")
 COLLECTION_NAME = os.environ.get("COLLECTION_NAME", "quotes")
 if not MONGODB_URI:
     raise RuntimeError("MONGODB_URI not set")
-
 client = AsyncIOMotorClient(
-    MONGODB_URI,
-        =
+       MONGODB_URI,
     serverSelectionTimeoutMS=10000,
     connectTimeoutMS=10000,
     maxPoolSize=50,
