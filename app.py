@@ -50,8 +50,7 @@ if not MONGODB_URI:
 
 client = AsyncIOMotorClient(
     MONGODB_URI,
-        tls=True,
-        tlsAllowInvalidCertificates=True,
+        =
     serverSelectionTimeoutMS=10000,
     connectTimeoutMS=10000,
     maxPoolSize=50,
@@ -141,6 +140,7 @@ def sitemap():
     urls = "".join(
         f"<url><loc>{HOMEPAGE.rstrip('/')}{p}</loc><changefreq>weekly</changefreq><priority>{'1.0' if p=='/' else '0.8'}</priority></url>"
         for p in SERVICE_PATHS
+ 
     )
     return (
         '<?xml version="1.0" encoding="UTF-8"?>'
@@ -148,10 +148,14 @@ def sitemap():
         f"{urls}</urlset>"
     )
 
-@app.get("/.well-known/health", response_class=PlainTextResponse)
+@app.get("/.we
+ll-known/health", response_class=PlainTextResponse)
 async def health():
     try:
         await db.command("ping")
         return "ok"
+
     except Exception as e:
         return PlainTextResponse(f"db-fail:{e}", status_code=500)
+
+
