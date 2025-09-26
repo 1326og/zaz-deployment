@@ -18,7 +18,7 @@ app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET, same_site="lax"
 
 ALLOWED_ORIGINS = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "").split(",") if o.strip()]
 app.add_middleware(
-    CORSMiddleware,
+    COSMiddleware,
     allow_credentials=True,
     allow_origins=ALLOWED_ORIGINS or [],
     allow_methods=["GET", "POST", "OPTIONS"],
@@ -146,8 +146,9 @@ def sitemap():
         f"{urls}</urlset>"
     )
 
-@app.get("/.we
-ll-known/health", response_class=PlainTextResponse)
+#@#app.get("/.we
+
+@app.get("/.well-known/health", response_class=PlainTextResponse)
 async def health():
     try:
         await db.command("ping")
