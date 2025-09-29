@@ -18,7 +18,7 @@ app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET, same_site="lax"
 
 ALLOWED_ORIGINS = [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "").split(",") if o.strip()]
 app.add_middleware(
-    COSMiddleware,
+    CORSMiddleware,
     allow_credentials=True,
     allow_origins=ALLOWED_ORIGINS or [],
     allow_methods=["GET", "POST", "OPTIONS"],
