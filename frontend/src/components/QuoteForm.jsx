@@ -67,13 +67,16 @@ const QuoteForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare data for GoHighLevel
+      // Prepare data for GoHighLevel API v2
       const ghlPayload = {
         firstName: formData.name.split(' ')[0] || formData.name,
         lastName: formData.name.split(' ').slice(1).join(' ') || '',
         email: formData.email,
         phone: formData.phone,
         address1: formData.location || '',
+        city: formData.location || '',
+        source: 'Website',
+        tags: ['Website Lead', 'Quote Request'],
         customFields: [
           {
             key: 'vehicle_type',
@@ -84,20 +87,16 @@ const QuoteForm = () => {
             field_value: formData.services.join(', ')
           },
           {
-            key: 'message',
+            key: 'additional_message',
             field_value: formData.message || ''
-          },
-          {
-            key: 'source',
-            field_value: 'Website Quote Form'
           }
-        ],
-        tags: ['Website Lead', 'Quote Request'],
-        source: 'Website'
+        ]
       };
 
-      // Submit to GoHighLevel
-      const response = await fetch(`${GHL_API_BASE}/contacts/`, {
+      console.log('Submitting to GoHighLevel:', ghlPayload);
+
+      // Submit to GoHighLevel API v2
+      const response = await fetch(`https://services.leadconnectorhq.com/contacts/`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${GHL_API_KEY}`,
@@ -107,9 +106,11 @@ const QuoteForm = () => {
         body: JSON.stringify(ghlPayload)
       });
 
+      console.log('GoHighLevel Response Status:', response.status);
+      
       if (response.ok) {
         const result = await response.json();
-        console.log('GoHighLevel contact created:', result);
+        console.log('Success - GoHighLevel contact created:', result);
         
         toast({
           title: "Quote Request Sent!",
@@ -127,10 +128,24 @@ const QuoteForm = () => {
           message: ''
         });
       } else {
-        const errorData = await response.json();
-        console.error('GoHighLevel API Error:', errorData);
+        // Log the full error response
+        const errorText = await response.text();
+        console.error('GoHighLevel API Error Details:', {
+          status: response.status,
+          statusText: response.statusText,
+          headers: Object.fromEntries(response.headers.entries()),
+          body: errorText
+        });
         
-        // Check if contact already exists
+        // Try to parse as JSON
+        let errorData;
+        try {
+          errorData = JSON.parse(errorText);
+        } catch (e) {
+          errorData = { message: errorText };
+        }
+        
+        // Handle specific error cases
         if (response.status === 422 && errorData.message && errorData.message.includes('already exists')) {
           toast({
             title: "Quote Request Received!",
@@ -147,17 +162,35 @@ const QuoteForm = () => {
             location: '',
             message: ''
           });
+        } else if (response.status === 401) {
+          console.error('Authentication failed - API key may be invalid');
+          toast({
+            title: "Service Temporarily Unavailable",
+            description: "Please call (973) 534-0023 directly for immediate assistance.",
+            variant: "destructive"
+          });
         } else {
-          throw new Error(`API Error: ${response.status}`);
+          throw new Error(`GoHighLevel API Error: ${response.status} - ${errorData.message || 'Unknown error'}`);
         }
       }
     } catch (error) {
-      console.error('Error submitting to GoHighLevel:', error);
-      toast({
-        title: "Error",
-        description: "There was an issue sending your request. Please call (973) 534-0023 directly.",
-        variant: "destructive"
-      });
+      console.error('Complete error details:', error);
+      
+      // More specific error handling
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        console.error('Network error - possible CORS or connectivity issue');
+        toast({
+          title: "Connection Error",
+          description: "Please check your internet connection and try again, or call (973) 534-0023.",
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "There was an issue sending your request. Please call (973) 534-0023 directly.",
+          variant: "destructive"
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
