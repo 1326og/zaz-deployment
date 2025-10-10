@@ -67,13 +67,53 @@ const QuoteForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Submit to actual backend API
-      const response = await axios.post(`${API}/quotes`, formData);
-      
-      if (response.data.success) {
+      // Prepare data for GoHighLevel
+      const ghlPayload = {
+        firstName: formData.name.split(' ')[0] || formData.name,
+        lastName: formData.name.split(' ').slice(1).join(' ') || '',
+        email: formData.email,
+        phone: formData.phone,
+        address1: formData.location || '',
+        customFields: [
+          {
+            key: 'vehicle_type',
+            field_value: formData.vehicleType
+          },
+          {
+            key: 'services_requested', 
+            field_value: formData.services.join(', ')
+          },
+          {
+            key: 'message',
+            field_value: formData.message || ''
+          },
+          {
+            key: 'source',
+            field_value: 'Website Quote Form'
+          }
+        ],
+        tags: ['Website Lead', 'Quote Request'],
+        source: 'Website'
+      };
+
+      // Submit to GoHighLevel
+      const response = await fetch(`${GHL_API_BASE}/contacts/`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${GHL_API_KEY}`,
+          'Content-Type': 'application/json',
+          'Version': '2021-07-28'
+        },
+        body: JSON.stringify(ghlPayload)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('GoHighLevel contact created:', result);
+        
         toast({
           title: "Quote Request Sent!",
-          description: "We'll contact you within 24 hours with a detailed quote.",
+          description: "Thank you! I'll contact you within 24 hours with a detailed quote.",
         });
 
         // Reset form
@@ -86,12 +126,36 @@ const QuoteForm = () => {
           location: '',
           message: ''
         });
+      } else {
+        const errorData = await response.json();
+        console.error('GoHighLevel API Error:', errorData);
+        
+        // Check if contact already exists
+        if (response.status === 422 && errorData.message && errorData.message.includes('already exists')) {
+          toast({
+            title: "Quote Request Received!",
+            description: "I have your information and will contact you soon with an updated quote.",
+          });
+
+          // Reset form even for existing contacts
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            vehicleType: '',
+            services: [],
+            location: '',
+            message: ''
+          });
+        } else {
+          throw new Error(`API Error: ${response.status}`);
+        }
       }
     } catch (error) {
-      console.error('Error submitting quote request:', error);
+      console.error('Error submitting to GoHighLevel:', error);
       toast({
         title: "Error",
-        description: error.response?.data?.detail || "There was an issue sending your request. Please try again.",
+        description: "There was an issue sending your request. Please call (973) 534-0023 directly.",
         variant: "destructive"
       });
     } finally {
