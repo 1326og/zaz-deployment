@@ -245,7 +245,7 @@ const QuoteForm = () => {
                     <Textarea
                       value={formData.message}
                       onChange={(e) => handleInputChange('message', e.target.value)}
-                      placeholder="Tell us more about your vehicle or specific requirements..."
+                      placeholder="Tell us more about your vehicle or specific requirements like window dont work..."
                       rows={4}
                       className="bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:border-orange-400 focus:ring-orange-400/20 resize-none"
                     />
