@@ -6,10 +6,11 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
-import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// GoHighLevel API Configuration
+const GHL_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6InhvTTkzSzVMVE5DdEVNRFFMUnZOIiwidmVyc2lvbiI6MSwiaWF0IjoxNzYwMDcwOTM2MTc2LCJzdWIiOiJ6OUdhT2JaYnZBcmdZNnVINHB1ZSJ9.6307gi7wm8_Do5n5s3L7Y_Ok2ohpuaROMQfp5X91Y3w';
+const GHL_LOCATION_ID = 'xoM93K5LTNCtEMDQLRvN';
+const GHL_API_BASE = 'https://services.leadconnectorhq.com';
 
 const QuoteForm = () => {
   const { toast } = useToast();
