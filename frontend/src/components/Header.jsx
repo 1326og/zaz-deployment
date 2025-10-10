@@ -52,7 +52,7 @@ const Header = () => {
               About
             </button>
             <Button 
-              onClick={() => scrollToSection('quote')} 
+              onClick={() => window.location.href = 'https://api.leadconnectorhq.com/widget/form/Tvl7RXwuSx4ltzvxnBJ6'} 
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold px-6 py-2 rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg"
             >
               Get Quote
