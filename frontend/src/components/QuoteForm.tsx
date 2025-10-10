@@ -7,7 +7,7 @@ import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
 import axios from 'axios';
-<!--
+
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
@@ -125,8 +125,7 @@ const QuoteForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
--->			  
-				<!--
+			  
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Personal Info */}
                   <div className="grid md:grid-cols-2 gap-4">
@@ -269,19 +268,6 @@ const QuoteForm = () => {
                     )}
                   </Button>
                 </form>
-				-->
-				import { useEffect } from "react";
-
-						export default function QuoteFormEmbed() {
-																	useEffect(() => {
-																					const s = document.createElement("script");
-																					s.src = "https://link-provided-by-highlevel/script.js"; // from your embed snippet
-																					s.defer = true;
-																					document.getElementById("ghl-form-mount")?.appendChild(s);
-																					}, []);
-
-																	return <div id="ghl-form-mount" className="w-full max-w-xl mx-auto" />;
-																}
 				
               </CardContent>
             </Card>
