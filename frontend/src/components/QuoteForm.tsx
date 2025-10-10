@@ -7,7 +7,7 @@ import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { useToast } from '../hooks/use-toast';
 import axios from 'axios';
-
+<!--
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
@@ -22,7 +22,7 @@ const QuoteForm = () => {
     location: '',
     message: ''
   });
-
+	
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const services = [
@@ -125,7 +125,7 @@ const QuoteForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-			  
+-->			  
 				<!--
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Personal Info */}
