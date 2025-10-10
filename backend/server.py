@@ -18,17 +18,11 @@ load_dotenv(ROOT_DIR / '.env')
 # MongoDB connection with TLS support
 mongo_url = os.environ['MONGO_URL']
 
-# Ensure TLS 1.2+ support for MongoDB Atlas
-ssl_context = ssl.create_default_context()
-ssl_context.check_hostname = False
-ssl_context.verify_mode = ssl.CERT_NONE
-
-# MongoDB client with explicit TLS configuration
+# MongoDB client with proper TLS configuration for newer pymongo
 client = AsyncIOMotorClient(
     mongo_url,
     tls=True,
     tlsAllowInvalidCertificates=True,
-    ssl_context=ssl_context,
     serverSelectionTimeoutMS=5000,
     connectTimeoutMS=10000,
     maxPoolSize=50
