@@ -66,134 +66,22 @@ const QuoteForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Prepare data for GoHighLevel API v2
-      const ghlPayload = {
-        firstName: formData.name.split(' ')[0] || formData.name,
-        lastName: formData.name.split(' ').slice(1).join(' ') || '',
-        email: formData.email,
-        phone: formData.phone,
-        address1: formData.location || '',
-        city: formData.location || '',
-        source: 'Website',
-        tags: ['Website Lead', 'Quote Request'],
-        customFields: [
-          {
-            key: 'vehicle_type',
-            field_value: formData.vehicleType
-          },
-          {
-            key: 'services_requested', 
-            field_value: formData.services.join(', ')
-          },
-          {
-            key: 'additional_message',
-            field_value: formData.message || ''
-          }
-        ]
-      };
+    // Option B: Redirect to GoHighLevel form
+    const ghlFormUrl = 'https://api.leadconnectorhq.com/widget/form/Tvl7RXwuSx4ltzvxnBJ6';
+    
+    // Show loading state briefly for better UX
+    toast({
+      title: "Redirecting to Quote Form",
+      description: "Taking you to our secure quote form...",
+    });
 
-      console.log('Submitting to GoHighLevel:', ghlPayload);
+    // Small delay for better user experience, then redirect
+    setTimeout(() => {
+      // Redirect to GoHighLevel form in same window
+      window.location.href = ghlFormUrl;
+    }, 1500);
 
-      // Submit to GoHighLevel API v2
-      const response = await fetch(`https://services.leadconnectorhq.com/contacts/`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${GHL_API_KEY}`,
-          'Content-Type': 'application/json',
-          'Version': '2021-07-28'
-        },
-        body: JSON.stringify(ghlPayload)
-      });
-
-      console.log('GoHighLevel Response Status:', response.status);
-      
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Success - GoHighLevel contact created:', result);
-        
-        toast({
-          title: "Quote Request Sent!",
-          description: "Thank you! I'll contact you within 24 hours with a detailed quote.",
-        });
-
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          vehicleType: '',
-          services: [],
-          location: '',
-          message: ''
-        });
-      } else {
-        // Log the full error response
-        const errorText = await response.text();
-        console.error('GoHighLevel API Error Details:', {
-          status: response.status,
-          statusText: response.statusText,
-          headers: Object.fromEntries(response.headers.entries()),
-          body: errorText
-        });
-        
-        // Try to parse as JSON
-        let errorData;
-        try {
-          errorData = JSON.parse(errorText);
-        } catch (e) {
-          errorData = { message: errorText };
-        }
-        
-        // Handle specific error cases
-        if (response.status === 422 && errorData.message && errorData.message.includes('already exists')) {
-          toast({
-            title: "Quote Request Received!",
-            description: "I have your information and will contact you soon with an updated quote.",
-          });
-
-          // Reset form even for existing contacts
-          setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            vehicleType: '',
-            services: [],
-            location: '',
-            message: ''
-          });
-        } else if (response.status === 401) {
-          console.error('Authentication failed - API key may be invalid');
-          toast({
-            title: "Service Temporarily Unavailable",
-            description: "Please call (973) 534-0023 directly for immediate assistance.",
-            variant: "destructive"
-          });
-        } else {
-          throw new Error(`GoHighLevel API Error: ${response.status} - ${errorData.message || 'Unknown error'}`);
-        }
-      }
-    } catch (error) {
-      console.error('Complete error details:', error);
-      
-      // More specific error handling
-      if (error.name === 'TypeError' && error.message.includes('fetch')) {
-        console.error('Network error - possible CORS or connectivity issue');
-        toast({
-          title: "Connection Error",
-          description: "Please check your internet connection and try again, or call (973) 534-0023.",
-          variant: "destructive"
-        });
-      } else {
-        toast({
-          title: "Error",
-          description: "There was an issue sending your request. Please call (973) 534-0023 directly.",
-          variant: "destructive"
-        });
-      }
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Note: setIsSubmitting(false) not needed since we're redirecting
   };
 
   const isFormValid = formData.name && formData.email && formData.phone && 
