@@ -18,14 +18,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Logo & Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="bg-[#f97316] text-white font-bold text-lg px-3 py-1.5 rounded">
-                ZAZ
-              </div>
-              <div>
-                <span className="font-bold text-white text-lg">PRECISION</span>
-                <span className="text-[#f97316] text-sm block -mt-1">AUTO DETAILING</span>
-              </div>
+            <div className="mb-4">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_2930c9d8-9cc0-4c98-bfa6-159e6921e348/artifacts/x81skjar_Untitled%20design.png" 
+                alt="ZAZ Precision Auto Detailing"
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-gray-400 mb-4">{footer.tagline}</p>
             <div className="flex flex-col gap-2">
