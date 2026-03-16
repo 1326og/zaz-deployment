@@ -65,9 +65,9 @@ export const siteContent = {
         features: [
           "Deep interior cleaning and conditioning",
           "Exterior wash and paint sealing application",
-          "Leather and fabric protection",
-          "Dashboard and trim restoration",
-          "Window and mirror cleaning",
+          "Leather cleaning and conditioning",
+          "Deep interior steam cleaning and extraction",
+          "Glass cleaning",
         ],
       },
       {
