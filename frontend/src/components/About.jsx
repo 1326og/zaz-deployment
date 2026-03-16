@@ -40,7 +40,7 @@ const About = () => {
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
           {/* Left Column - Description */}
-          <div>
+          <div className="!mx-[21px]">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {about.mainHeading}
             </h3>
@@ -56,11 +56,11 @@ const About = () => {
             {about.features.map((feature, index) =>
             <div
               key={index}
-              className={`p-5 rounded-xl ${
-              feature.highlighted ?
-              'bg-gradient-to-br from-[#f97316] to-[#fb923c] text-white col-span-1 sm:col-span-2' :
-              'bg-gray-50 border border-gray-100'}`
-              }>
+              className="bg-gradient-to-br from-[#f97316] to-[#fb923c] col-span-1 sm:col-span-2 p-5 rounded-xl text-white !bg-[rgba(28,165,219,0.89)]">
+
+
+
+
 
                 <div
                 className="w-10 h-10 flex items-center justify-center mb-3 rounded-lg text-gray-700 !bg-[#0A65F6]">
@@ -77,9 +77,9 @@ const About = () => {
                   {feature.title}
                 </h4>
                 <p
-                className={`text-sm ${
-                feature.highlighted ? 'text-white/90' : 'text-gray-600'}`
-                }>
+                className="text-sm !text-[#FFFFFF]">
+
+
 
                   {feature.description}
                 </p>
