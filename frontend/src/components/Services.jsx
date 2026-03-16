@@ -18,7 +18,6 @@ const Services = () => {
       'Full Interior & Exterior Detailing': Car,
       'Paint Correction': Paintbrush,
       'Paint Enhancement': Paintbrush,
-      'Ceramic Coatings': Droplets,
       'Headlight Restoration': Eye,
     };
     const Icon = iconMap[serviceName] || Shield;
@@ -31,7 +30,6 @@ const Services = () => {
       'Full Interior & Exterior Detailing': 'bg-[#0ea5e9]',
       'Paint Correction': 'bg-[#f97316]',
       'Paint Enhancement': 'bg-[#10b981]',
-      'Ceramic Coatings': 'bg-[#8b5cf6]',
       'Headlight Restoration': 'bg-[#ec4899]',
     };
     return colors[serviceName] || 'bg-[#6366f1]';
