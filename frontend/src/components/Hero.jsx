@@ -1,9 +1,9 @@
 import React from 'react';
-import { Truck, Shield, Sparkles } from 'lucide-react';
+import { Truck, Shield, Sparkles, Phone, Mail } from 'lucide-react';
 import { siteContent } from '../data/siteContent';
 
 const Hero = () => {
-  const { hero, featureCards } = siteContent;
+  const { hero, featureCards, business } = siteContent;
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -28,6 +28,24 @@ const Hero = () => {
       <div className="bg-gradient-to-b from-[#1e293b] to-[#0f172a] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="text-center">
+            {/* Contact Info in Hero */}
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              <a
+                href={`tel:${business.phone}`}
+                className="flex items-center gap-2 text-gray-300 hover:text-[#f97316] transition-colors"
+              >
+                <Phone className="w-5 h-5 text-[#f97316]" />
+                <span className="text-base">{business.phone}</span>
+              </a>
+              <a
+                href={`mailto:${business.email}`}
+                className="flex items-center gap-2 text-gray-300 hover:text-[#f97316] transition-colors"
+              >
+                <Mail className="w-5 h-5 text-[#f97316]" />
+                <span className="text-base">{business.email}</span>
+              </a>
+            </div>
+
             {/* Main Title */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4">
               <span className="text-[#f97316]">{hero.title}</span>
