@@ -19,25 +19,25 @@ const Footer = () => {
           {/* Logo & Info */}
           <div>
             <div className="mb-4">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_2930c9d8-9cc0-4c98-bfa6-159e6921e348/artifacts/0m3sovej_9b8b716f-e11a-45ba-8aa8-9d1c57d6790f.png" 
+              <img
+                src="https://customer-assets.emergentagent.com/job_2930c9d8-9cc0-4c98-bfa6-159e6921e348/artifacts/0m3sovej_9b8b716f-e11a-45ba-8aa8-9d1c57d6790f.png"
                 alt="ZAZ Precision Auto Detailing"
-                className="h-12 w-auto"
-              />
+                className="h-15 w-auto !mt-[33px] !mb-[33px]" />
+
             </div>
             <p className="text-gray-400 mb-4">{footer.tagline}</p>
             <div className="flex flex-col gap-2">
               <a
                 href={`tel:${business.phone}`}
-                className="flex items-center gap-2 text-gray-400 hover:text-[#f97316] transition-colors"
-              >
+                className="flex items-center gap-2 text-gray-400 hover:text-[#f97316] transition-colors">
+
                 <Phone className="w-4 h-4" />
                 <span>{business.phone}</span>
               </a>
               <a
                 href={`mailto:${business.email}`}
-                className="flex items-center gap-2 text-gray-400 hover:text-[#f97316] transition-colors text-sm"
-              >
+                className="flex items-center gap-2 text-gray-400 hover:text-[#f97316] transition-colors text-sm">
+
                 <Mail className="w-4 h-4" />
                 <span>{business.email}</span>
               </a>
@@ -48,16 +48,16 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['Services', 'Gallery', 'About', 'Quote'].map((link) => (
-                <li key={link}>
+              {['Services', 'Gallery', 'About', 'Quote'].map((link) =>
+              <li key={link}>
                   <button
-                    onClick={() => scrollToSection(link.toLowerCase())}
-                    className="text-gray-400 hover:text-[#f97316] transition-colors"
-                  >
+                  onClick={() => scrollToSection(link.toLowerCase())}
+                  className="text-gray-400 hover:text-[#f97316] transition-colors">
+
                     {link === 'Quote' ? 'Get a Quote' : link}
                   </button>
                 </li>
-              ))}
+              )}
             </ul>
           </div>
 
@@ -70,14 +70,14 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <button
                 onClick={() => scrollToSection('quote')}
-                className="bg-[#f97316] hover:bg-[#ea580c] text-white px-4 py-2 rounded-full font-semibold text-sm transition-colors"
-              >
+                className="hover:bg-[#ea580c] transition-colors font-semibold text-sm px-4 py-2 rounded-full text-white !bg-[#165ECC]">
+
                 Request Quote
               </button>
               <a
                 href={`tel:${business.phone}`}
-                className="bg-transparent border border-white hover:bg-white hover:text-[#0f172a] text-white px-4 py-2 rounded-full font-semibold text-sm text-center transition-colors"
-              >
+                className="bg-transparent border border-white hover:bg-white hover:text-[#0f172a] text-white px-4 py-2 rounded-full font-semibold text-sm text-center transition-colors">
+
                 Call Now
               </a>
             </div>
@@ -89,8 +89,8 @@ const Footer = () => {
           <p className="text-gray-500 text-sm">{footer.copyright}</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 export default Footer;
