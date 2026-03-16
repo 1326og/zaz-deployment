@@ -196,7 +196,6 @@ export const siteContent = {
       "Full Interior & Exterior Detailing",
       "Paint Correction",
       "Paint Enhancement",
-      "Ceramic Coatings",
       "Headlight Restoration",
     ],
   },
