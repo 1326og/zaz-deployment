@@ -83,13 +83,13 @@ export const siteContent = {
       {
         name: "Paint Enhancement",
         isPremium: false,
-        description: "Improve your vehicle's gloss, remove light swirl marks, and restore shine using professional polishing techniques and high-quality detailing products.",
+        description: "Restore shine, improve gloss, and remove light swirl marks using professional polishing techniques and high-quality detailing products.",
         features: [
-          "Gloss improvement and restoration",
+          "Restoring shine and clarity",
+          "Improving gloss and depth",
           "Light swirl mark removal",
-          "Professional polishing techniques",
           "High-quality detailing products",
-          "Long-lasting shine protection",
+          "Long-lasting protection",
         ],
       },
       {
