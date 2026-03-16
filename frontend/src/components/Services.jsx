@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Zap, Car, Shield, Paintbrush, Eye, Droplets } from 'lucide-react';
+import { CheckCircle, Zap, Car, Shield, Paintbrush, Eye } from 'lucide-react';
 import { siteContent } from '../data/siteContent';
 
 const Services = () => {
