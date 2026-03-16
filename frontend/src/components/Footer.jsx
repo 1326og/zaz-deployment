@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img 
-                src="https://customer-assets.emergentagent.com/job_2930c9d8-9cc0-4c98-bfa6-159e6921e348/artifacts/x81skjar_Untitled%20design.png" 
+                src="https://customer-assets.emergentagent.com/job_2930c9d8-9cc0-4c98-bfa6-159e6921e348/artifacts/0m3sovej_9b8b716f-e11a-45ba-8aa8-9d1c57d6790f.png" 
                 alt="ZAZ Precision Auto Detailing"
                 className="h-12 w-auto"
               />
