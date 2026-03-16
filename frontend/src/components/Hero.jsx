@@ -16,7 +16,7 @@ const Hero = () => {
     const icons = {
       truck: Truck,
       shield: Shield,
-      sparkles: Sparkles,
+      sparkles: Sparkles
     };
     const Icon = icons[iconName] || Sparkles;
     return <Icon className="w-6 h-6" />;
@@ -42,31 +42,31 @@ const Hero = () => {
 
             {/* Feature Pills */}
             <div className="flex flex-wrap justify-center gap-3 mb-10">
-              {hero.features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-2 bg-[#334155] px-4 py-2 rounded-full text-sm"
-                >
+              {hero.features.map((feature, index) =>
+              <div
+                key={index}
+                className="flex items-center gap-2 bg-[#334155] px-4 py-2 rounded-full text-sm">
+
                   {index === 0 && <Truck className="w-4 h-4 text-[#f97316]" />}
                   {index === 1 && <Shield className="w-4 h-4 text-[#f97316]" />}
                   {index === 2 && <Sparkles className="w-4 h-4 text-[#f97316]" />}
                   <span>{feature}</span>
                 </div>
-              ))}
+              )}
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button
                 onClick={() => scrollToSection('quote')}
-                className="bg-[#f97316] hover:bg-[#ea580c] text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
-              >
+                className="bg-[#f97316] hover:bg-[#ea580c] text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105">
+
                 {hero.ctaPrimary}
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="bg-transparent border-2 border-white hover:bg-white hover:text-[#1e293b] text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300"
-              >
+                className="bg-transparent border-2 border-white hover:bg-white hover:text-[#1e293b] text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300">
+
                 {hero.ctaSecondary}
               </button>
             </div>
@@ -78,25 +78,25 @@ const Hero = () => {
       <div className="bg-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 -mt-20">
-            {featureCards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg p-6 text-center border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
+            {featureCards.map((card, index) =>
+            <div
+              key={index}
+              className="border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-center p-6 rounded-xl shadow-lg !bg-[#141D30]">
+
                 <div className="w-14 h-14 bg-[#f97316] rounded-xl flex items-center justify-center mx-auto mb-4 text-white">
                   {getIcon(card.icon)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold mb-2 !text-[#F97316]">
                   {card.title}
                 </h3>
-                <p className="text-gray-600">{card.description}</p>
+                <p className="!text-[#F7F7F7]">{card.description}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
