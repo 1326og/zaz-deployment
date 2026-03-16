@@ -11,7 +11,7 @@ const About = () => {
       truck: Truck,
       calendar: Calendar,
       award: Award,
-      heart: Heart,
+      heart: Heart
     };
     const Icon = icons[iconName] || Zap;
     return <Icon className="w-6 h-6" />;
@@ -21,7 +21,7 @@ const About = () => {
     'Full Interior & Exterior Detailing': { icon: Car, color: 'bg-[#0ea5e9]' },
     'Paint Correction': { icon: Paintbrush, color: 'bg-[#f97316]' },
     'Paint Enhancement': { icon: Paintbrush, color: 'bg-[#10b981]' },
-    'Headlight Restoration': { icon: Eye, color: 'bg-[#ec4899]' },
+    'Headlight Restoration': { icon: Eye, color: 'bg-[#ec4899]' }
   };
 
   return (
@@ -44,47 +44,47 @@ const About = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {about.mainHeading}
             </h3>
-            {about.description.map((paragraph, index) => (
-              <p key={index} className="text-gray-600 mb-4 leading-relaxed">
+            {about.description.map((paragraph, index) =>
+            <p key={index} className="text-gray-600 mb-4 leading-relaxed">
                 {paragraph}
               </p>
-            ))}
+            )}
           </div>
 
           {/* Right Column - Features */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {about.features.map((feature, index) => (
-              <div
-                key={index}
-                className={`p-5 rounded-xl ${
-                  feature.highlighted
-                    ? 'bg-gradient-to-br from-[#f97316] to-[#fb923c] text-white col-span-1 sm:col-span-2'
-                    : 'bg-gray-50 border border-gray-100'
-                }`}
-              >
+            {about.features.map((feature, index) =>
+            <div
+              key={index}
+              className={`p-5 rounded-xl ${
+              feature.highlighted ?
+              'bg-gradient-to-br from-[#f97316] to-[#fb923c] text-white col-span-1 sm:col-span-2' :
+              'bg-gray-50 border border-gray-100'}`
+              }>
+
                 <div
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
-                    feature.highlighted ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-700'
-                  }`}
-                >
+                className="w-10 h-10 flex items-center justify-center mb-3 rounded-lg text-gray-700 !bg-[#0A65F6]">
+
+
+
                   {getIcon(feature.icon)}
                 </div>
                 <h4
-                  className={`font-bold mb-1 ${
-                    feature.highlighted ? 'text-white' : 'text-gray-900'
-                  }`}
-                >
+                className={`font-bold mb-1 ${
+                feature.highlighted ? 'text-white' : 'text-gray-900'}`
+                }>
+
                   {feature.title}
                 </h4>
                 <p
-                  className={`text-sm ${
-                    feature.highlighted ? 'text-white/90' : 'text-gray-600'
-                  }`}
-                >
+                className={`text-sm ${
+                feature.highlighted ? 'text-white/90' : 'text-gray-600'}`
+                }>
+
                   {feature.description}
                 </p>
               </div>
-            ))}
+            )}
           </div>
         </div>
 
@@ -100,21 +100,21 @@ const About = () => {
               return (
                 <div key={index} className="flex flex-col items-center gap-2">
                   <div
-                    className={`w-12 h-12 ${serviceConfig.color} rounded-full flex items-center justify-center text-white`}
-                  >
+                    className={`w-12 h-12 ${serviceConfig.color} rounded-full flex items-center justify-center text-white`}>
+
                     <Icon className="w-6 h-6" />
                   </div>
                   <span className="text-sm font-medium text-gray-700 text-center">
                     {service}
                   </span>
-                </div>
-              );
+                </div>);
+
             })}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default About;
