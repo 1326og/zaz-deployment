@@ -18,7 +18,7 @@ const Services = () => {
       'Full Interior & Exterior Detailing': Car,
       'Paint Correction': Paintbrush,
       'Paint Enhancement': Paintbrush,
-      'Headlight Restoration': Eye,
+      'Headlight Restoration': Eye
     };
     const Icon = iconMap[serviceName] || Shield;
     return <Icon className="w-7 h-7" />;
@@ -30,7 +30,7 @@ const Services = () => {
       'Full Interior & Exterior Detailing': 'bg-[#0ea5e9]',
       'Paint Correction': 'bg-[#f97316]',
       'Paint Enhancement': 'bg-[#10b981]',
-      'Headlight Restoration': 'bg-[#ec4899]',
+      'Headlight Restoration': 'bg-[#ec4899]'
     };
     return colors[serviceName] || 'bg-[#6366f1]';
   };
@@ -41,11 +41,11 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            {services.title.split(' ').map((word, i) => (
-              <span key={i} className={word === 'Premium' ? 'text-[#f97316]' : ''}>
+            {services.title.split(' ').map((word, i) =>
+            <span key={i} className={word === 'Premium' ? 'text-[#f97316]' : ''}>
                 {word}{' '}
               </span>
-            ))}
+            )}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             {services.subtitle}
@@ -54,39 +54,39 @@ const Services = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {services.items.map((service, index) => (
-            <div
-              key={index}
-              className={`rounded-xl p-6 border transition-all duration-300 hover:shadow-lg ${
-                service.isPremium
-                  ? 'border-[#f97316] border-2 relative overflow-hidden'
-                  : 'border-gray-200 bg-white'
-              }`}
-            >
+          {services.items.map((service, index) =>
+          <div
+            key={index}
+            className={`rounded-xl p-6 border transition-all duration-300 hover:shadow-lg ${
+            service.isPremium ?
+            'border-[#f97316] border-2 relative overflow-hidden' :
+            'border-gray-200 bg-white'}`
+            }>
+
               {/* Premium Badge */}
-              {service.isPremium && (
-                <div className="bg-gradient-to-r from-[#f97316] to-[#fb923c] text-white text-sm font-semibold py-1.5 px-4 absolute top-0 left-0 right-0 text-center">
+              {service.isPremium &&
+            <div className="bg-gradient-to-r from-[#f97316] to-[#fb923c] text-white text-sm font-semibold py-1.5 px-4 absolute top-0 left-0 right-0 text-center">
                   ⭐ PREMIUM PACKAGE ⭐
                 </div>
-              )}
+            }
 
               <div className={service.isPremium ? 'mt-8' : ''}>
                 {/* Icon */}
                 <div
-                  className={`w-14 h-14 ${getIconBgColor(
-                    service.name,
-                    service.isPremium
-                  )} rounded-xl flex items-center justify-center text-white mb-4`}
-                >
+                className={`w-14 h-14 ${getIconBgColor(
+                  service.name,
+                  service.isPremium
+                )} rounded-xl flex items-center justify-center text-white mb-4`}>
+
                   {getServiceIcon(service.name)}
                 </div>
 
                 {/* Title */}
                 <h3
-                  className={`text-xl font-bold mb-2 ${
-                    service.isPremium ? 'text-[#f97316]' : 'text-gray-900'
-                  }`}
-                >
+                className={`text-xl font-bold mb-2 ${
+                service.isPremium ? 'text-[#f97316]' : 'text-gray-900'}`
+                }>
+
                   {service.name}
                 </h3>
 
@@ -95,20 +95,20 @@ const Services = () => {
 
                 {/* Features */}
                 <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-2">
+                  {service.features.map((feature, featureIndex) =>
+                <li key={featureIndex} className="flex items-start gap-2">
                       <CheckCircle className="w-5 h-5 text-[#22c55e] flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700 text-sm">{feature}</span>
                     </li>
-                  ))}
+                )}
                 </ul>
               </div>
             </div>
-          ))}
+          )}
         </div>
 
         {/* Mobile Service Banner */}
-        <div className="mt-12 bg-gradient-to-r from-[#f97316] to-[#fb923c] rounded-2xl p-8 md:p-10 text-center text-white">
+        <div className="bg-gradient-to-r from-[#f97316] to-[#fb923c] text-center mt-12 p-8 md:p-10 rounded-2xl text-white !bg-[#021720]">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Zap className="w-8 h-8" />
             <h3 className="text-2xl md:text-3xl font-bold">{mobileBanner.title}</h3>
@@ -118,14 +118,14 @@ const Services = () => {
           </p>
           <button
             onClick={() => scrollToSection('quote')}
-            className="bg-white text-[#f97316] hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg"
-          >
+            className="hover:bg-gray-100 transition-all duration-300 hover:shadow-lg font-semibold px-8 py-3 rounded-full !text-[#1671F9] bg-white">
+
             {mobileBanner.ctaText}
           </button>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Services;
