@@ -76,10 +76,8 @@ export const siteContent = {
         description: "Professional paint restoration to remove swirl marks, scratches, and imperfections.",
         features: [
           "Multi-stage paint correction process",
-          "Swirl mark and scratch removal",
-          "Paint depth restoration",
+          "Swirl mark and scratch removal or reduction",
           "High-quality finishing compounds",
-          "Machine polishing techniques",
         ],
       },
       {
