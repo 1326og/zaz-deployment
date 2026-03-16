@@ -34,14 +34,14 @@ const Navbar = () => {
       isScrolled ? 'bg-white shadow-lg' : 'bg-white shadow-md'}`
       }>
 
-      <div className="max-w-7xl !pb-[19px] !pl-[16px] !pr-[16px]">
+      <div className="max-w-7xl !pb-[10px] !pl-[16px] !pr-[16px]">
         <div className="flex items-center justify-between h-16 md:h-20 !my-[12px]">
           {/* Logo */}
           <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
             <img
               src="https://customer-assets.emergentagent.com/job_2930c9d8-9cc0-4c98-bfa6-159e6921e348/artifacts/0m3sovej_9b8b716f-e11a-45ba-8aa8-9d1c57d6790f.png"
               alt="ZAZ Precision Auto Detailing"
-              className="h-14 md:h-40 w-auto !ml-[12px] !mr-[12px] !pl-[11px] !pr-[11px] !rounded-xl" />
+              className="h-20 md:h-28 w-auto !mt-[18px] !ml-[12px] !mr-[12px] !pl-[11px] !pr-[11px] !rounded-xl" />
 
           </div>
 
