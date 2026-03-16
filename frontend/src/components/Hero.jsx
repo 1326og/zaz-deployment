@@ -83,7 +83,7 @@ const Hero = () => {
               key={index}
               className="border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-center p-6 rounded-xl shadow-lg !bg-[#141D30]">
 
-                <div className="w-14 h-14 bg-[#f97316] rounded-xl flex items-center justify-center mx-auto mb-4 text-white">
+                <div className="w-14 h-14 flex items-center justify-center mx-auto mb-4 rounded-xl text-white !bg-[#F99316]">
                   {getIcon(card.icon)}
                 </div>
                 <h3 className="text-xl font-bold mb-2 !text-[#F97316]">
