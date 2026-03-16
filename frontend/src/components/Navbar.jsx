@@ -37,14 +37,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
-            <div className="bg-[#f97316] text-white font-bold text-lg px-3 py-1.5 rounded">
-              ZAZ
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-bold text-gray-900 text-lg">PRECISION</span>
-              <span className="text-[#f97316] text-sm block -mt-1">AUTO DETAILING</span>
-            </div>
+          <div className="flex items-center cursor-pointer" onClick={() => scrollToSection('hero')}>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_2930c9d8-9cc0-4c98-bfa6-159e6921e348/artifacts/x81skjar_Untitled%20design.png" 
+              alt="ZAZ Precision Auto Detailing"
+              className="h-12 md:h-14 w-auto"
+            />
           </div>
 
           {/* Contact Info - Desktop */}
