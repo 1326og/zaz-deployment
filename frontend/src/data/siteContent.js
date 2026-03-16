@@ -161,7 +161,7 @@ export const siteContent = {
     mainHeading: "Premium Mobile Auto Detailing",
     description: [
       "At ZAZ Precision Auto Detailing, I specialize in bringing professional-grade auto detailing services directly to your doorstep. My mobile approach means you never have to leave the comfort of your home or office.",
-      "I pride myself on delivering comprehensive interior and exterior detailing, expert paint correction, paint enhancement, ceramic coatings, and headlight restoration services that exceed expectations.",
+      "I pride myself on delivering comprehensive interior and exterior detailing, expert paint correction, paint enhancement, and headlight restoration services that exceed expectations.",
       "All I need is access to water and electricity - I handle everything else! My professional equipment and premium products ensure your vehicle receives the care it deserves.",
     ],
     features: [
