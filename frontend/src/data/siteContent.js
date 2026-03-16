@@ -85,25 +85,13 @@ export const siteContent = {
       {
         name: "Paint Enhancement",
         isPremium: false,
-        description: "Enhance your vehicle's paint finish with professional-grade treatments.",
+        description: "Improve your vehicle's gloss, remove light swirl marks, and restore shine using professional polishing techniques and high-quality detailing products.",
         features: [
-          "Paint clarity improvement",
-          "Gloss enhancement treatments",
-          "Surface preparation and cleaning",
-          "Professional grade products",
+          "Gloss improvement and restoration",
+          "Light swirl mark removal",
+          "Professional polishing techniques",
+          "High-quality detailing products",
           "Long-lasting shine protection",
-        ],
-      },
-      {
-        name: "Ceramic Coatings",
-        isPremium: false,
-        description: "Advanced ceramic coating application for long-lasting paint protection and shine.",
-        features: [
-          "Professional grade ceramic coating",
-          "Long-lasting protection up to 2+ years",
-          "Hydrophobic water-beading effect",
-          "UV damage protection",
-          "Enhanced gloss and depth",
         ],
       },
       {
