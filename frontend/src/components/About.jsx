@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Truck, Calendar, Award, Heart, Car, Paintbrush, Droplets, Eye } from 'lucide-react';
+import { Zap, Truck, Calendar, Award, Heart, Car, Paintbrush, Eye } from 'lucide-react';
 import { siteContent } from '../data/siteContent';
 
 const About = () => {
@@ -21,7 +21,6 @@ const About = () => {
     'Full Interior & Exterior Detailing': { icon: Car, color: 'bg-[#0ea5e9]' },
     'Paint Correction': { icon: Paintbrush, color: 'bg-[#f97316]' },
     'Paint Enhancement': { icon: Paintbrush, color: 'bg-[#10b981]' },
-    'Ceramic Coatings': { icon: Droplets, color: 'bg-[#8b5cf6]' },
     'Headlight Restoration': { icon: Eye, color: 'bg-[#ec4899]' },
   };
 
